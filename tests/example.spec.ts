@@ -27,6 +27,13 @@ test('Go crawl each landchg results', async ({ page }) => {
   // and save the html source down
   for (const year of years) {
     for (const city of cities) {
+      const filename = `${year}-${city}.html`
+      const filepath = path.join(downloadDir, filename)
+
+      if (fs.existsSync(filepath)) {
+        continue
+      }
+
       await page.selectOption('select[name="ProjectYear"]', year)
       await page.selectOption('select[name="City"]', city)
 
@@ -35,7 +42,7 @@ test('Go crawl each landchg results', async ({ page }) => {
 
       // await page.waitForTimeout(5000)
       await page.innerHTML('html', { timeout: 0 }).then((html) => {
-        fs.writeFileSync(path.join(downloadDir, `${year}-${city}.html`), html)
+        fs.writeFileSync(filepath, html)
       })
     }
   }
