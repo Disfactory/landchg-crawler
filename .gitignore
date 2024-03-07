@@ -4,3 +4,8 @@ node_modules/
 /playwright/.cache/
 
 tests/downloads/
+html/*
+!html/.gitkeep
+
+output/*
+!output/.gitkeep

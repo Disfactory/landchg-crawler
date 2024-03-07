@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import fs from 'fs'
 import path from 'path'
 
-const downloadDir = path.join(__dirname, 'downloads');
+const downloadDir = path.join(__dirname, '../html');
 
 test('Go crawl each landchg results', async ({ page }) => {
   await page.goto('https://landchg.tcd.gov.tw/Module/RWD/Web/pub_exhibit.aspx')

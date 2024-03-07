@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "generate": "node scripts/generate.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.35.1",
     "@types/node": "^20.3.2"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
   }
 }
